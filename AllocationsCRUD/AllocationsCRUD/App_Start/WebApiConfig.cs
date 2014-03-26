@@ -91,6 +91,10 @@ namespace AllocationsCRUD
             builder.EntitySet<CommentSummary>("PortfolioComments");
             builder.EntitySet<AllocationHistorySummary>("AllocationHistory");
 
+            builder.EntitySet<AllocationSummary>("AllocationSummary");
+            builder.Entity<AllocationSummary>().Collection.Action("Get");
+            builder.Entity<AllocationSummary>().Collection.Action("GetAllocationSummary");
+
 
             return builder.GetEdmModel();
         }

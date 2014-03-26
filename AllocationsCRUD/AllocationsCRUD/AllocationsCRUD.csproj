@@ -186,7 +186,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AllocationSummariesController.cs" />
+    <Compile Include="Controllers\AllocationSummaryController.cs" />
     <Compile Include="Models\ActiveTradeSummary.cs">
       <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
     </Compile>

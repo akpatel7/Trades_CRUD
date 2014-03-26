@@ -9,11 +9,11 @@ using AllocationsCRUD.Models;
 
 namespace AllocationsCRUD.Controllers
 {
-    public class AllocationSummariesController : ODataController
+    public class AllocationSummaryController : ODataController
     {
         private readonly AllocationsDataService _allocationsEntitiesDataService;
 
-        public AllocationSummariesController()
+        public AllocationSummaryController()
         {
             _allocationsEntitiesDataService = new AllocationsDataService();
         }
