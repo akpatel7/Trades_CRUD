@@ -61,7 +61,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
     </Reference>
@@ -181,6 +184,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\ActiveTradeSummary.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Allocation.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AllocationEntities.cs" />
+    <Compile Include="Models\AllocationHistorySummary.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AllocationsDataService.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\EdmBuilder.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -194,11 +208,150 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AllocationSummary.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AllocationValue.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Benchmark.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comment.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CommentSummary.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Currency.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DurationType.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities.cs" />
+    <Compile Include="Models\Hedge_Type.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IAllocationsEntitiesDataService.cs" />
+    <Compile Include="Models\Instruction_Type.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IPortofolioEntitiesDataService.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Length_Type.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LinkedTrade.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Location.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Measure_Type.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Performance.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PerformanceSummary.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Portfolio.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PortfolioSummary.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PortfolioType.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PortofolioDataService.cs" />
+    <Compile Include="Models\Position.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Related_Trade.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Relativity.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Service.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\spot_carry_Result.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Status.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Structure_Type.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\TodoItem.cs" />
     <Compile Include="Models\TodoList.cs" />
     <Compile Include="Models\TodoListContext.cs" />
+    <Compile Include="Models\PortofolioAllocationModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortofolioAllocationModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PortofolioAllocationModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PortofolioAllocationModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortofolioAllocationModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Track_Record.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Track_Record_Type.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tradable_Thing.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tradable_Thing_Class.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Trade.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TradeHistory.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TradeLineSummary.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TradeLookupData.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Trade_Comment.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Trade_Instruction.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Trade_Line.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Trade_Line_Group.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Trade_Line_Group_Type.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WeightingDescription.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -238,6 +391,23 @@
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Content\toastr.css.map">
       <DependentUpon>toastr.css</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\PortofolioAllocationModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PortofolioAllocationModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PortofolioAllocationModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PortofolioAllocationModel.edmx</DependentUpon>
+      <LastGenOutput>PortofolioAllocationModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\PortofolioAllocationModel.edmx.diagram">
+      <DependentUpon>PortofolioAllocationModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\PortofolioAllocationModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PortofolioAllocationModel.edmx</DependentUpon>
+      <LastGenOutput>PortofolioAllocationModel.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\breeze.angular.js" />
@@ -298,6 +468,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
