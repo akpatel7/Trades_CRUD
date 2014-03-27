@@ -6,13 +6,14 @@ using System.Web;
 
 namespace AllocationsCRUD.Models
 {
-    public class PortofolioDataService : DbContext, IPortofolioEntitiesDataService
+    public class PortfolioDataService : DbContext, IPortfolioEntitiesDataService
     {
-        public PortofolioDataService()
+        public PortfolioDataService()
             : base("name=BCATrade_devEntities")
         {}
 
-        public DbSet<PortfolioSummary> PortofolioSummaries { get; set; }
+        public DbSet<PortfolioSummary> PortfolioSummaries { get; set; }
+        public DbSet<AllocationSummary> AllocationSummaries { get; set; }
 
         public IQueryable<T> Query<T>() where T : class
         {

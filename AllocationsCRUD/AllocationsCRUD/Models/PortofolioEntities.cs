@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace AllocationsCRUD.Models
 {
-    public class AllocationEntities : DbContext, ITradesEntities
+    public class PortofolioEntities : DbContext, ITradesEntities
     {
-        public AllocationEntities()
+        public PortofolioEntities()
             : base("name=BCATrade_devEntities")
         {
         }

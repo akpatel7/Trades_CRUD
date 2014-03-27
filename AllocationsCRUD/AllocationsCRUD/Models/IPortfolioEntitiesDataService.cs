@@ -5,7 +5,7 @@ using System.Web;
 
 namespace AllocationsCRUD.Models
 {
-    public interface IPortofolioEntitiesDataService : IDisposable
+    public interface IPortfolioEntitiesDataService : IDisposable
     {
         IQueryable<T> Query<T>() where T : class;
         void Add<T>(T entity) where T : class;

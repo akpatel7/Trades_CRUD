@@ -186,18 +186,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AllocationSummaryController.cs" />
+    <Compile Include="Controllers\PortfolioSummariesController.cs" />
     <Compile Include="Models\ActiveTradeSummary.cs">
       <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Allocation.cs">
       <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\AllocationEntities.cs" />
+    <Compile Include="Models\PortofolioEntities.cs" />
     <Compile Include="Models\AllocationHistorySummary.cs">
       <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\AllocationsDataService.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\EdmBuilder.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -239,11 +238,10 @@
     <Compile Include="Models\Hedge_Type.cs">
       <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\IAllocationsEntitiesDataService.cs" />
     <Compile Include="Models\Instruction_Type.cs">
       <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\IPortofolioEntitiesDataService.cs" />
+    <Compile Include="Models\IPortfolioEntitiesDataService.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Length_Type.cs">
@@ -273,7 +271,7 @@
     <Compile Include="Models\PortfolioType.cs">
       <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PortofolioDataService.cs" />
+    <Compile Include="Models\PortfolioDataService.cs" />
     <Compile Include="Models\Position.cs">
       <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
     </Compile>
