@@ -92,9 +92,10 @@ namespace AllocationsCRUD
 
             builder.EntitySet<PortfolioSummary>("PortfolioSummaries");
             builder.EntitySet<AllocationSummary>("AllocationSummaries");
-            builder.Entity<AllocationSummary>().Collection.Action("GetAllocationSummaries");
-            builder.Entity<AllocationSummary>().Action("GetAllocationSummary");
 
+            ActionConfiguration getAllocationSummaries = builder.Entity<PortfolioSummary>().Collection.Action("GetAllocationSummaries");
+            ActionConfiguration expandAllocationTree = builder.Entity<PortfolioSummary>().Collection.Action("GetExpandedAllocationTree");
+             
             return builder.GetEdmModel();
         }
     }
