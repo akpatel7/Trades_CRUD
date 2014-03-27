@@ -14,6 +14,11 @@ namespace AllocationsCRUD.Models
     
     public partial class PortfolioSummary
     {
+        public PortfolioSummary()
+        {
+            this.AllocationSummaries = new HashSet<AllocationSummary>();
+        }
+    
         public string Service { get; set; }
         public string ServiceCode { get; set; }
         public string Type { get; set; }
@@ -27,5 +32,7 @@ namespace AllocationsCRUD.Models
         public Nullable<System.DateTime> LastUpdated { get; set; }
         public Nullable<System.DateTime> FirstPublishedDate { get; set; }
         public string PerformanceModel { get; set; }
+    
+        public virtual ICollection<AllocationSummary> AllocationSummaries { get; set; }
     }
 }

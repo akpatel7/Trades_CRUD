@@ -39,5 +39,7 @@ namespace AllocationsCRUD.Models
         public string InstrumentUri { get; set; }
         public string Status { get; set; }
         public Nullable<int> StatusId { get; set; }
+    
+        public virtual PortfolioSummary PortfolioSummary { get; set; }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f6557099067846eca5ca18ef800b87f7" Name="Diagram1" ZoomLevel="100">
+      <Diagram DiagramId="f6557099067846eca5ca18ef800b87f7" Name="Diagram1" ZoomLevel="75">
         <EntityTypeShape EntityType="BCATrade_devModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BCATrade_devModel.Allocation" Width="1.5" PointX="11.25" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BCATrade_devModel.AllocationValue" Width="1.5" PointX="13.5" PointY="16" IsExpanded="true" />
@@ -39,7 +39,7 @@
         <EntityTypeShape EntityType="BCATrade_devModel.WeightingDescription" Width="1.5" PointX="11.25" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BCATrade_devModel.ActiveTradeSummary" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BCATrade_devModel.AllocationHistorySummary" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BCATrade_devModel.AllocationSummary" Width="1.5" PointX="13.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATrade_devModel.AllocationSummary" Width="1.5" PointX="12.75" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="BCATrade_devModel.CommentSummary" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BCATrade_devModel.LinkedTrade" Width="1.5" PointX="10.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BCATrade_devModel.PerformanceSummary" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
@@ -88,6 +88,7 @@
         <AssociationConnector Association="BCATrade_devModel.FK_Trade_Line_Trade" ManuallyRouted="false" />
         <AssociationConnector Association="BCATrade_devModel.FK_Trade_Line_Trade_Line_Group" ManuallyRouted="false" />
         <AssociationConnector Association="BCATrade_devModel.FK_Trade_Line_Group_Trade_Line_Group_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATrade_devModel.PortfolioSummaryAllocationSummary" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

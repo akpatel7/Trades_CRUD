@@ -15,10 +15,10 @@ namespace AllocationsCRUD.Models
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
-            //modelBuilder.Entity<AllocationSummary>()
-            //            .HasRequired(a => a.PortfolioSummary)
-            //            .WithMany(p => p.AllocationSummaries)
-            //            .HasForeignKey(p => p.Portfolio_Id);
+            modelBuilder.Entity<AllocationSummary>()
+                        .HasRequired(a => a.PortfolioSummary)
+                        .WithMany(p => p.AllocationSummaries)
+                        .HasForeignKey(p => p.Portfolio_Id);
 
             modelBuilder.Ignore<ActiveTradeSummary>();
             modelBuilder.Ignore<TradeLineSummary>();

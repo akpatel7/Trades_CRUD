@@ -1681,6 +1681,10 @@
             <Parameter Name="trade_id" Mode="In" Type="Int32" />
             <Parameter Name="spot_carry_date" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <AssociationSet Name="PortfolioSummaryAllocationSummary" Association="BCATrade_devModel.PortfolioSummaryAllocationSummary">
+            <End Role="PortfolioSummary" EntitySet="PortfolioSummaries" />
+            <End Role="AllocationSummary" EntitySet="AllocationSummaries" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="spot_carry_Result">
           <Property Name="trade_id" Type="Int32" />
@@ -2188,6 +2192,7 @@
           <Property Name="InstrumentUri" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="Status" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="StatusId" Type="Int32" />
+          <NavigationProperty Name="PortfolioSummary" Relationship="BCATrade_devModel.PortfolioSummaryAllocationSummary" FromRole="AllocationSummary" ToRole="PortfolioSummary" />
         </EntityType>
         <EntityType Name="CommentSummary">
           <Key>
@@ -2244,6 +2249,7 @@
           <Property Name="LastUpdated" Type="DateTime" Precision="3" />
           <Property Name="FirstPublishedDate" Type="DateTime" Precision="3" />
           <Property Name="PerformanceModel" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="AllocationSummaries" Relationship="BCATrade_devModel.PortfolioSummaryAllocationSummary" FromRole="PortfolioSummary" ToRole="AllocationSummary" />
         </EntityType>
         <EntityType Name="TradeHistory">
           <Key>
@@ -2790,6 +2796,18 @@
             </Principal>
             <Dependent Role="Trade_Line_Group">
               <PropertyRef Name="trade_line_group_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PortfolioSummaryAllocationSummary">
+          <End Type="BCATrade_devModel.PortfolioSummary" Role="PortfolioSummary" Multiplicity="0..1" />
+          <End Type="BCATrade_devModel.AllocationSummary" Role="AllocationSummary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PortfolioSummary">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AllocationSummary">
+              <PropertyRef Name="Portfolio_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

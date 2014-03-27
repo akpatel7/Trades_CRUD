@@ -29,3 +29,5 @@ Thumbs.db
 _UpgradeReport_Files/
 _ReSharper.*/
 AllocationsCRUD/packages/
+AllocationsCRUD/AllocationsCRUD/App_Data/AllocationsCRUD.Models.TodoListContext.mdf
+AllocationsCRUD/AllocationsCRUD/App_Data/AllocationsCRUD.Models.TodoListContext_log.ldf
