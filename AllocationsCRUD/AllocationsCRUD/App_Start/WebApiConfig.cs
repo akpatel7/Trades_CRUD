@@ -79,19 +79,19 @@ namespace AllocationsCRUD
             builder.EntitySet<Trade_Line_Group>("Trade_Line_Group").EntityType.HasKey(x => x.trade_line_group_id);
             builder.EntitySet<Trade_Line_Group_Type>("Trade_Line_Group_Type").EntityType.HasKey(x => x.trade_line_group_type_id);
 
-            //builder.EntitySet<Portfolio>("_Portfolio");
-            //builder.EntitySet<Allocation>("_Allocation");
-            //builder.EntitySet<Comment>("_Comments");
+            //builder.EntitySet<Portfolio>("Portfolio");
+            //builder.EntitySet<Allocation>("Allocation");
+            //builder.EntitySet<Comment>("Comments");
 
-            builder.EntitySet<PortfolioSummary>("Portfolios");
-            builder.EntitySet<AllocationSummary>("Allocations");
             builder.EntitySet<PortfolioType>("PortfolioTypes");
             builder.EntitySet<DurationType>("DurationTypes");
             builder.EntitySet<PerformanceSummary>("Performance");
             builder.EntitySet<CommentSummary>("PortfolioComments");
             builder.EntitySet<AllocationHistorySummary>("AllocationHistory");
 
-            builder.EntitySet<AllocationSummary>("AllocationSummary");
+
+            builder.EntitySet<PortfolioSummary>("PortfolioSummaries");
+            builder.EntitySet<AllocationSummary>("AllocationSummaries");
             builder.Entity<AllocationSummary>().Collection.Action("Get");
             builder.Entity<AllocationSummary>().Collection.Action("GetAllocationSummary");
 
