@@ -158,30 +158,20 @@ namespace AllocationsCRUD.Controllers
         }
 
         // GET odata/PortfolioSummaries(5)/AllocationSummaries
-        [Queryable]
-        public IQueryable<AllocationSummary> GetAllocationSummaries([FromODataUri] int key)
-        {
-            PortfolioSummary portofolio = db.PortfolioSummaries.FirstOrDefault(p => p.Id == key);
-            if (portofolio == null)
-            {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
-            }
+        //No need can use: http://localhost:55802/bca/PortfolioSummaries(2)?$expand=AllocationSummaries
+        //[Queryable]
+        //public IQueryable<AllocationSummary> GetAllocationSummaries([FromODataUri] int key)
+        //{
+        //    PortfolioSummary portofolio = db.PortfolioSummaries.FirstOrDefault(p => p.Id == key);
+        //    if (portofolio == null)
+        //    {
+        //        throw new HttpResponseException(HttpStatusCode.NotFound);
+        //    }
 
-            return db.AllocationSummaries.Where(m => m.Portfolio_Id == portofolio.Id);
-        }
+        //    return db.AllocationSummaries.Where(m => m.Portfolio_Id == portofolio.Id);
+        //}
 
-        // GET odata/PortfolioSummaries(5)/AllocationSummaries
-        [Queryable]
-        public IQueryable<AllocationSummary> GetExpandedAllocationTree([FromODataUri] int key)
-        {
-            PortfolioSummary portofolio = db.PortfolioSummaries.FirstOrDefault(p => p.Id == key);
-            if (portofolio == null)
-            {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
-            }
-
-            return db.AllocationSummaries.Where(m => m.Portfolio_Id == portofolio.Id);
-        }
+        
 
         protected override void Dispose(bool disposing)
         {
