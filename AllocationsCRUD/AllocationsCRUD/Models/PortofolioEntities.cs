@@ -43,7 +43,7 @@ namespace AllocationsCRUD.Models
         public DbSet<Comment> Comments { get; set; }
         public DbSet<CommentSummary> CommentSummaries { get; set; }
         public DbSet<AllocationValue> AllocationValues { get; set; }
-        public DbSet<AllocationHistorySummary> AllocationHistory { get; set; }
+        public DbSet<AllocationHistorySummary> AllocationHistorySummaries { get; set; }
 
         public DbSet<Benchmark> Benchmarks { get; set; }
         public DbSet<DurationType> DurationTypes { get; set; }

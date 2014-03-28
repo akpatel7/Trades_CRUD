@@ -71,6 +71,10 @@ namespace AllocationsCRUD.Models
         public DbSet<TradeHistory> TradeHistories { get; set; }
         public DbSet<TradeLineSummary> TradeLineSummaries { get; set; }
         public DbSet<TradeLookupData> TradeLookupDatas { get; set; }
+        public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<webpages_Membership> webpages_Membership { get; set; }
+        public DbSet<webpages_OAuthMembership> webpages_OAuthMembership { get; set; }
+        public DbSet<webpages_Roles> webpages_Roles { get; set; }
     
         [EdmFunction("BCATrade_devEntities", "spot_carry")]
         public virtual IQueryable<spot_carry_Result> spot_carry(Nullable<int> trade_id, Nullable<System.DateTime> spot_carry_date)

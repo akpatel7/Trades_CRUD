@@ -1,7 +1,7 @@
 'use strict';
 
 tradesApp.factory('allocationsService', function ($resource, $q) {
-    var resource = $resource('/bca/:entity?:odataParam', { entity: '@entity', odataParam: '@odataParam' });
+    var resource = $resource('/odata/:entity?:odataParam', { entity: '@entity', odataParam: '@odataParam' });
         return {
         getAllocationSummaries: function (odataParam) {
             var deferred = $q.defer();
@@ -27,7 +27,7 @@ tradesApp.factory('allocationsService', function ($resource, $q) {
         },
         getAllocationHistories: function (allocationId, odataParam) {
             var deferred = $q.defer();
-            resource.get({ entity: 'Allocations(' + allocationId + ')/History', odataParam: odataParam },
+            resource.get({ entity: 'AllocationHistorySummaries(' + allocationId + ')/', odataParam: odataParam },
                 function (data) {
                     deferred.resolve(data);
                 },
@@ -37,9 +37,9 @@ tradesApp.factory('allocationsService', function ($resource, $q) {
             return deferred.promise;
         },
         
-        getPortfolioHistories: function (portfolioId, odataParam) {
+        getCommentSummaries: function (portfolioId, odataParam) {
         var deferred = $q.defer();
-        resource.get({ entity: 'Portfolios(' + portfolioId + ')/History', odataParam: odataParam },
+        resource.get({ entity: 'CommentSummaries(' + portfolioId + ')', odataParam: odataParam },
             function (data) {
                 deferred.resolve(data);
             },

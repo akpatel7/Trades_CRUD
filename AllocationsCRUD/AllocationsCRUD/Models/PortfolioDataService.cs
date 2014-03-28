@@ -14,6 +14,9 @@ namespace AllocationsCRUD.Models
 
         public DbSet<PortfolioSummary> PortfolioSummaries { get; set; }
         public DbSet<AllocationSummary> AllocationSummaries { get; set; }
+        public DbSet<Allocation> Allocations { get; set; }
+        public DbSet<Portfolio> Portfolios { get; set; }
+        public DbSet<AllocationHistorySummary> AllocationHistorySummaries { get; set; }
 
         public IQueryable<T> Query<T>() where T : class
         {
@@ -39,5 +42,7 @@ namespace AllocationsCRUD.Models
         {
             throw new NotImplementedException();
         }
+
+        
     }
 }

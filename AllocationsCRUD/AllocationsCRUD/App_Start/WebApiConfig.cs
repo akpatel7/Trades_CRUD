@@ -42,7 +42,7 @@ namespace AllocationsCRUD
             );
 
             //Used for Allocations Endpoint
-            config.Routes.MapODataRoute("bca-odata", "bca", GetImplicitEdm());
+            config.Routes.MapODataRoute("bca-odata", "odata", GetImplicitEdm());
             config.EnableQuerySupport();
 
         }
@@ -87,7 +87,7 @@ namespace AllocationsCRUD
             builder.EntitySet<DurationType>("DurationTypes");
             builder.EntitySet<PerformanceSummary>("Performance");
             builder.EntitySet<CommentSummary>("PortfolioComments");
-            builder.EntitySet<AllocationHistorySummary>("AllocationHistory");
+            builder.EntitySet<AllocationHistorySummary>("AllocationHistorySummaries");
 
 
             builder.EntitySet<PortfolioSummary>("PortfolioSummaries");

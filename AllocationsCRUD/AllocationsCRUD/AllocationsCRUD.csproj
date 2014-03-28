@@ -186,6 +186,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AllocationHistorySummariesController.cs" />
+    <Compile Include="Controllers\AllocationSummariesController.cs" />
+    <Compile Include="Controllers\CommentSummariesController.cs" />
     <Compile Include="Controllers\PortfolioSummariesController.cs" />
     <Compile Include="Controllers\TreeGridDemoController.cs" />
     <Compile Include="Models\ActiveTradeSummary.cs">
@@ -349,6 +352,18 @@
       <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Trade_Line_Group_Type.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserProfile.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webpages_Membership.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webpages_OAuthMembership.cs">
+      <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webpages_Roles.cs">
       <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\WeightingDescription.cs">
