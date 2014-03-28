@@ -1288,7 +1288,7 @@ tradesApp.factory('allocationsTreeGridBuilder', function (allocationsService, ut
 
                     var portfolioGridData = {
                         id: 'p-' + portfolioSummary.Id,
-                        Service: portfolioSummary.Service,
+                        Service: portfolioSummary.ServiceCode,
                         Instrument: portfolioSummary.Name,
                         CurrentAllocation: portfolioSummary.CurrentAllocation,
                         PreviousAllocation: portfolioSummary.PreviousAllocation,

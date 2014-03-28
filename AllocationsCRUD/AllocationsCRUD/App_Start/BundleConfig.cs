@@ -23,13 +23,24 @@ namespace AllocationsCRUD
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/toastr.css",
-                      "~/Content/breeze.directives.css",
-                      "~/Content/site.css",
-                      "~/Content/todo.css"
-                      ));
+            //bundles.Add(new StyleBundle("~/Content/css").Include(
+            //          "~/Content/bootstrap.css",
+            //          "~/Content/toastr.css",
+            //          "~/Content/breeze.directives.css",
+            //          "~/Content/site.css",
+            //          "~/Content/todo.css"
+            //          ));
+
+            bundles.Add(new StyleBundle("~/Content/css/bundle").Include(
+                     "~/Content/css/bootstrap-dashboard.css",
+                     "~/Content/css/smoothness/jquery-ui.css",
+                     "~/Content/css/autoSuggest.css",
+                     "~/Content/css/oo_style.css",
+                     "~/Content/toastr.css",
+                     "~/Content/site.css",
+                     "~/Content/todo.css"
+                 ));
+
         }
     }
 }

@@ -1,19 +1,146 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Absolute Allocation";
 }
 
-<div class="jumbotron">
-    <h1>Web API OData & Breeze</h1>
-    <p>This is an MVC application, straight from the template, with an additional SPA page.</p>
-    <p>
-        That "Single Page Application" (SPA) is an MVC page re-wired
-        with Breeze, Web API OData, and Angular.</p>
-    <p>
-    Click "BOWA" in the navigation bar to see it.
-    </p>
-    <p>
-    Learn how this sample works
-    <a href="http://www.breezejs.com/samples/breeze-web-api-odata-sample"
-        target="_blank" title="Breeze BOWA sample documentation">on the Breeze website</a>.
-    </p>
+<div ng-app="tradesApp">
+
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="service">Service:</label>
+                </div>
+                <div class="col-sm-3">
+                    <select id="portofolio-service" class="form-control" ng-model="portofolio.service" ng-required="true">
+                        <option value="">{Service}</option>
+                        <option value="1">BCA</option>
+                        <option value="2">GIS</option>
+                        <option value="3">GPS</option>
+                        <option value="4">USBS</option>
+                        <option value="5">USIS</option>
+                        <option value="6">GRES</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="service">Portofolio Type:</label>
+                </div>
+                <div class="col-sm-3">
+                    <select id="portofolio-service" class="form-control" ng-model="portofolio.type" ng-required="true">
+                        <option value="">{Portofolio Type}</option>
+                        <option value="1">Absolute</option>
+                        <option value="2">Weighted</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="service">Portofolio Name:</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" ng-model="portofolio.name" id="portofolio-name" placeholder="{Portofolio Name}" ng-required="true">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="service">Portofolio Benchmark:</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" ng-model="portofolio.benchmark" id="portofolio-service" placeholder="{Benchmark}" ng-required="true">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="service">Portofolio Duration:</label>
+                </div>
+                <div class="col-sm-3">
+                    <select id="portofolio-service" class="form-control" ng-model="portofolio.duration">
+                        <option value="">{Duration}</option>
+                        <option value="1">Below Benchmark</option>
+                        <option value="2">Slightly below benchmark</option>
+                        <option value="3">Benchmark</option>
+                        <option value="4">Slightly above benchmark</option>
+                        <option value="5">Above Benchmark</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="service">Updated/Created Date:</label>
+                </div>
+                <div class="col-md-3">
+                    <p class="input-group">
+                        <input type="text" class="form-control" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" close-text="Close" ng-required="true" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="service">Portofolio Comments:</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" ng-model="portofolio.comments" id="portofolio-service" placeholder="{Comments}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="service">Portofolio Performance Model:</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" ng-model="portofolio.performanceModel" id="portofolio-service" placeholder="{Performance Model}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="service">Portofolio Status:</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" ng-model="portofolio.status" id="portofolio-service" placeholder="{Status}">
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <!--[if lte IE 8]>
+            <script>
+                document.createElement('em-allocations-grid');
+            </script>
+        <![endif]-->
+        <br />
+        <br />
+        <br />
+        <div ng-controller="allocationsController">
+
+            <em-allocations-grid moreinfocontentcalled="moreInfoContentCalled" config="allocationsGridConfig" name="demo122"></em-allocations-grid>
+
+        </div>
+    </div>
 </div>
+<div>
+    <br />
+    <br />
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <button class="btn btn-primary pull-right" ng-click="update(portofolio)">Save</button><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><button class="btn btn-primary pull-right" ng-click="reset()">Cancel</button>
+    </div>
+</div>
+@section scripts
+{
+    <script src="/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="/Scripts/angular-resource.min.js"></script>
+    <script src="/Scripts/underscore.js"></script>
+    <script src="/TreeGrid/Grid/GridE.js"></script>
+    <script src="/js/tradesApp.js"></script>
+    <script src="/js/services/allocationsTreeGridBuilder.js"></script>
+    <script src="/js/services/allocationsService.js"></script>
+    <script src="/js/services/utils.js"></script>
+    <script src="/js/directives/emAllocationsGrid.js"></script>
+    <script src="/js/controllers/allocationsController.js"></script>
+}
