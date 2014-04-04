@@ -189,7 +189,9 @@
     <Compile Include="Controllers\AllocationHistorySummariesController.cs" />
     <Compile Include="Controllers\AllocationSummariesController.cs" />
     <Compile Include="Controllers\CommentSummariesController.cs" />
+    <Compile Include="Controllers\PortfoliosController.cs" />
     <Compile Include="Controllers\PortfolioSummariesController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\TreeGridDemoController.cs" />
     <Compile Include="Models\ActiveTradeSummary.cs">
       <DependentUpon>PortofolioAllocationModel.tt</DependentUpon>

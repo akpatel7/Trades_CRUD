@@ -42,7 +42,7 @@ namespace AllocationsCRUD
             );
 
             //Used for Allocations Endpoint
-            config.Routes.MapODataRoute("bca-odata", "odata", GetImplicitEdm());
+            config.Routes.MapODataRoute("bca-odata", "bca-odata", GetImplicitEdm());
             config.EnableQuerySupport();
 
         }
@@ -56,7 +56,7 @@ namespace AllocationsCRUD
             builder.EntitySet<TradeLineSummary>("TradeLines").EntityType.HasKey(x => x.trade_line_id);
             builder.EntitySet<Trade>("Trade").EntityType.HasKey(x => x.trade_id);
             builder.EntitySet<TradeLookupData>("TradeLookupData").EntityType.HasKey(x => x.id);
-            builder.EntitySet<Benchmark>("Benchmark").EntityType.HasKey(x => x.benchmark_id);
+            builder.EntitySet<Benchmark>("Benchmarks").EntityType.HasKey(x => x.benchmark_id);
             builder.EntitySet<Hedge_Type>("Hedge_Type").EntityType.HasKey(x => x.hedge_id);
             builder.EntitySet<Currency>("Currency").EntityType.HasKey(x => x.currency_id);
             builder.EntitySet<Measure_Type>("Measure_Type").EntityType.HasKey(x => x.measure_type_id);
@@ -66,7 +66,7 @@ namespace AllocationsCRUD
             builder.EntitySet<Track_Record>("Track_Record").EntityType.HasKey(x => x.track_record_id);
             builder.EntitySet<Instruction_Type>("Instruction_Type").EntityType.HasKey(x => x.instruction_type_id);
             builder.EntitySet<Relativity>("Relativity").EntityType.HasKey(x => x.relativity_id);
-            builder.EntitySet<Service>("Service").EntityType.HasKey(x => x.service_id);
+            builder.EntitySet<Service>("Services").EntityType.HasKey(x => x.service_id);
             builder.EntitySet<Trade_Comment>("TradeComments").EntityType.HasKey(x => x.comment_id);
             builder.EntitySet<Trade_Line>("Trade_Line").EntityType.HasKey(x => x.trade_line_id);
             builder.EntitySet<Status>("Status").EntityType.HasKey(x => x.status_id);
@@ -79,9 +79,9 @@ namespace AllocationsCRUD
             builder.EntitySet<Trade_Line_Group>("Trade_Line_Group").EntityType.HasKey(x => x.trade_line_group_id);
             builder.EntitySet<Trade_Line_Group_Type>("Trade_Line_Group_Type").EntityType.HasKey(x => x.trade_line_group_type_id);
 
-            //builder.EntitySet<Portfolio>("Portfolio");
-            //builder.EntitySet<Allocation>("Allocation");
-            //builder.EntitySet<Comment>("Comments");
+            builder.EntitySet<Portfolio>("Portfolios");
+            builder.EntitySet<Allocation>("Allocations");
+            builder.EntitySet<Comment>("Comment");
 
             builder.EntitySet<PortfolioType>("PortfolioTypes");
             builder.EntitySet<DurationType>("DurationTypes");
@@ -92,7 +92,7 @@ namespace AllocationsCRUD
 
             builder.EntitySet<PortfolioSummary>("PortfolioSummaries");
             builder.EntitySet<AllocationSummary>("AllocationSummaries");
-
+           
             ActionConfiguration getAllocationSummaries = builder.Entity<PortfolioSummary>().Collection.Action("GetAllocationSummaries");
             ActionConfiguration expandAllocationTree = builder.Entity<PortfolioSummary>().Collection.Action("GetExpandedAllocationTree");
              

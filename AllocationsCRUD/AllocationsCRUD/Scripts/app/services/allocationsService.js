@@ -1,7 +1,7 @@
 'use strict';
 
 portfoliosApp.factory('allocationsService', function ($resource, $q) {
-    var resource = $resource('/odata/:entity?:odataParam', { entity: '@entity', odataParam: '@odataParam' });
+    var resource = $resource('/bca-odata/:entity?:odataParam', { entity: '@entity', odataParam: '@odataParam' });
         return {
         getAllocationSummaries: function (odataParam) {
             var deferred = $q.defer();
