@@ -961,6 +961,7 @@
     <Content Include="Scripts\lib\TreeGrid\Styles\Examples.css" />
     <Content Include="Scripts\lib\TreeGrid\Styles\Info.txt" />
     <Content Include="Scripts\lib\TreeGrid\Styles\Page.png" />
+    <Content Include="Templates\partials\portfolio-landing.html" />
     <Content Include="Views\TreeGridDemo\AllocationLayout.xml">
       <SubType>Designer</SubType>
     </Content>

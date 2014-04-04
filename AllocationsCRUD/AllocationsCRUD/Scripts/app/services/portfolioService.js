@@ -1,6 +1,6 @@
 'use strict';
 
-portfolioApp.factory('allocationsService', function ($resource, $q) {
+portfolioApp.factory('portfolioService', function ($resource, $q) {
     var resource = $resource('/bca-odata/:entity?:odataParam', { entity: '@entity', odataParam: '@odataParam' });
         return {
         getAllocationSummaries: function (odataParam) {
@@ -46,8 +46,32 @@ portfolioApp.factory('allocationsService', function ($resource, $q) {
             function (response) {
                 deferred.reject(response);
             });
-        return deferred.promise;
-    }
+            return deferred.promise;
+        },
+
+        getServices: function (serviceId, odataParam) {
+            var deferred = $q.defer();
+            resource.get({ entity: 'Services(' + serviceId + ')', odataParam: odataParam },
+                function (data) {
+                    deferred.resolve(data);
+                },
+                function (response) {
+                    deferred.reject(response);
+                });
+            return deferred.promise;
+        },
+
+        getPortfolios: function (portfolioId, odataParam) {
+            var deferred = $q.defer();
+            resource.get({ entity: 'Portfolios(' + portfolioId + ')', odataParam: odataParam },
+                function (data) {
+                    deferred.resolve(data);
+                },
+                function (response) {
+                    deferred.reject(response);
+                });
+            return deferred.promise;
+        }
     };
 });
 

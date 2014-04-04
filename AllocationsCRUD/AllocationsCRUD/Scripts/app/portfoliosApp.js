@@ -14,11 +14,15 @@ var portfoliosApp = angular.module('portfoliosApp', [
 portfoliosApp.config(['$routeProvider',
   function ($routeProvider) {
       $routeProvider.
+           when('/portfolio/landing', {
+               templateUrl: 'Templates/partials/portfolio-landing.html',
+               //controller: 'portfoliosController'
+           }).
           when('/portfolio/detail', {
               templateUrl: 'Templates/partials/portfolio-detail.html',
               //controller: 'portfoliosController'
           }).
         otherwise({
-            redirectTo: '/home'
+            redirectTo: '/portfolio/landing'
         });
   }]);
