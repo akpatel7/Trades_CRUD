@@ -1,4 +1,5 @@
-﻿<div class="container-fluid">
+﻿<div ng-controller="portfoliosController">
+<div class="container-fluid">
     <div class="row-fluid">
         <form class="form-horizontal">
             <div class="form-group">
@@ -7,15 +8,11 @@
                         <label>Select a service:</label>
                     </div>
                     <div class="col-sm-4">
-                        <select id="portofolio-service" class="form-control" ng-model="portofolio.service" ng-required="true">
-                            <option value="">{Service}</option>
-                            <option value="1">BCA</option>
-                            <option value="2">GIS</option>
-                            <option value="3">GPS</option>
-                            <option value="4">USBS</option>
-                            <option value="5">USIS</option>
-                            <option value="6">GRES</option>
-                        </select>
+                        <span class="nullable">
+                            <select id="portofolio-service" class="form-control" ng-model="services" ng-options="s.service_code for s in services">
+                                <option value="">{Service}</option>
+                            </select>
+                        </span>
                     </div>
                 </div>
                 <div class="row">
@@ -23,18 +20,20 @@
                         <label>Select a portfolio:</label>
                     </div>
                     <div class="col-sm-6">
-                        <select id="portofolio-portfolio" class="form-control" ng-model="portofolio.type" ng-required="true">
-                            <option value="">{Portfolio}</option>
-                            <option value="1">Model Low Risk Portfolio</option>
-                            <option value="2">Model medium risk Portfolio (40-60% Equities)</option>
-                        </select>
+                        <span class="nullable">
+                            <select id="portofolio-portfolio" class="form-control" ng-model="portfolios" ng-options="p.name for p in portfolios">
+                                <option value="">{Portfolio}</option> 
+                            </select>
+                        </span>
                     </div>
+                
                 </div>
-                <br/>
+                <br />
                 <div class="row">
                     <span><strong><i>OR... </i></strong></span><a href="/#/portfolio/create">Create a new portfolio</a>
                 </div>
             </div>
         </form>
     </div>
+</div>
 </div>

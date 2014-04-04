@@ -1,6 +1,6 @@
 'use strict';
 
-portfolioApp.factory('portfolioService', function ($resource, $q) {
+portfoliosApp.factory('portfolioService', function ($resource, $q) {
     var resource = $resource('/bca-odata/:entity?:odataParam', { entity: '@entity', odataParam: '@odataParam' });
         return {
         getAllocationSummaries: function (odataParam) {
