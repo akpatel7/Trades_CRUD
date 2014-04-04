@@ -67,12 +67,7 @@
                     <label>Updated/Created Date:</label>
                 </div>
                 <div class="col-md-3">
-                    <p class="input-group">
-                        <input type="text" class="form-control" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" close-text="Close" ng-required="true" />
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                        </span>
-                    </p>
+                    <input type="text" class="form-control" ng-model="portofolio.updateddate" id="portofolio-service" placeholder="" disabled="disabled">
                 </div>
             </div>
             <div class="row">
@@ -111,9 +106,7 @@
         <br />
         <br />
         <div ng-controller="allocationsController">
-
             <em-allocations-grid moreinfocontentcalled="moreInfoContentCalled" config="allocationsGridConfig" name="demo122"></em-allocations-grid>
-
         </div>
     </div>
     <div>
