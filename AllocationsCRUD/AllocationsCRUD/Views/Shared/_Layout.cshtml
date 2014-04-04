@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-<html xmlns:ng="http://angularjs.org" id="ng-app" ng-controller="AppController">
+<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +21,7 @@
                         </a>
                         <div id="topNavigation"></div>
                         <ul class="nav navbar-nav">
-                            <li>@Html.ActionLink("CRUD", "Index", "Home")</li>
+                            <li><a href="/#/portfolio/detail">Detail</a></li>
                             <li>@Html.ActionLink("BOWA", "Bowa", "Home")</li>
                             <li>@Html.ActionLink("TreeGrid", "Demo1", "TreeGridDemo")</li>
                         </ul>
@@ -30,17 +30,19 @@
                 </div>
             </div>
         </header>
-        <div class="body @ViewBag.BrowserVersion">
+        <div class="body">
             @RenderBody()
-            <hr />
+        </div>
+        <div class="push"></div>
+    </div>
             <footer>
                 <p>&copy; @DateTime.Now.Year - BCA Research</p>
             </footer>
-        </div>
-    </div>
+    
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/angularBreeze")
     @RenderSection("scripts", required: false)
 </body>
 </html>

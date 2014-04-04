@@ -1,6 +1,6 @@
 'use strict';
 
-tradesApp.factory('utils', function() {
+portfoliosApp.factory('utils', function () {
     return {
         cfgToOdataParam: function(cfg) {
             function addOdataFilterIfPresent(fieldName, oDataFilters, filterCfg) {

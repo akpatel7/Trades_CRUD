@@ -1,6 +1,6 @@
 'use strict';
 
-tradesApp.factory('allocationsService', function ($resource, $q) {
+portfoliosApp.factory('allocationsService', function ($resource, $q) {
     var resource = $resource('/odata/:entity?:odataParam', { entity: '@entity', odataParam: '@odataParam' });
         return {
         getAllocationSummaries: function (odataParam) {

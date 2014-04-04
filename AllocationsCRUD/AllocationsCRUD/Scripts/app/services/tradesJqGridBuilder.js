@@ -9,7 +9,7 @@ tradesApp.factory('tradesJqGridBuilder', function (tradeLineSummariesService) {
 
                 sortable: {
                     update: function (permutation) {
-                        //debugger;
+                        //debugger;http://localhost:55803/Scripts/app/partials
 
                         var grid = $('#' + gridTableName);
                         var rowIds = grid.getDataIDs();

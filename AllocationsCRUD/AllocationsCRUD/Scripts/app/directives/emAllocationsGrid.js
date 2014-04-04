@@ -1,5 +1,5 @@
 'use strict';
-tradesApp.directive('emAllocationsGrid', function (allocationsTreeGridBuilder) {
+portfoliosApp.directive('emAllocationsGrid', function (allocationsTreeGridBuilder) {
     return {
         restrict: 'E',
         replace: true,

@@ -2,17 +2,17 @@
     ViewBag.Title = "BCA Portfolio CRUD Tool";
 }
 
-<div data-ng-app="tradesApp">
-        <div ng-view></div>
- </div>
+<div data-ng-app="portfoliosApp">
+    <div ng-view></div>
+</div>
 
 @section scripts
 {
-    <script src="/TreeGrid/Grid/GridE.js"></script>
-    <script src="/js/tradesApp.js"></script>
-    <script src="/js/services/allocationsTreeGridBuilder.js"></script>
-    <script src="/js/services/allocationsService.js"></script>
-    <script src="/js/services/utils.js"></script>
-    <script src="/js/directives/emAllocationsGrid.js"></script>
-    <script src="/js/controllers/allocationsController.js"></script>
+    <script src="/Scripts/app/portfoliosApp.js"></script>
+    <script src="/Scripts/lib/TreeGrid/Grid/GridE.js"></script>
+    <script src="/Scripts/app/services/allocationsTreeGridBuilder.js"></script>
+    <script src="/Scripts/app/services/allocationsService.js"></script>
+    <script src="/Scripts/app/services/utils.js"></script>
+    <script src="/Scripts/app/directives/emAllocationsGrid.js"></script>
+    <script src="/Scripts/app/controllers/allocationsController.js"></script>
 }

@@ -1,7 +1,4 @@
-portfoliosApp.controller('allocationsController', function ($scope) {
-    
-    $scope.allocationsGridConfig = { nige: "hello" },
-
+portfoliosApp.controller('allocationsGridUsageController', function ($scope) {
     $scope.demoConfig1 = {
         colNames: [
             'ID',
@@ -105,12 +102,8 @@ portfoliosApp.controller('allocationsController', function ($scope) {
 
     };
 
-    $scope.moreInfoContentCalled = function (data) {
-        alert("allocationsController: moreInfoContentCalled: " + data);
-    };
-
     $scope.gridLoadComplete = function (data) {
-        //console.log(data);
+        console.log(data);
     };
     
     $scope.demoConfig2 = {

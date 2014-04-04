@@ -17,7 +17,7 @@
 
 
 
-tradesApp.factory('allocationsTreeGridBuilder', function (allocationsService, utils) {
+portfolioApp.factory('allocationsTreeGridBuilder', function (allocationsService, utils) {
     return {
         cachedContentStore: [],
 

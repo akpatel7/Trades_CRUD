@@ -1,4 +1,4 @@
-portfoliosApp.controller('allocationsController', function ($scope) {
+portfoliosApp.controller('portfoliosController', function ($scope) {
     
     $scope.allocationsGridConfig = { nige: "hello" },
 
