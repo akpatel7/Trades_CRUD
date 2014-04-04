@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
-<html>
+
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-controller="AppController">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,36 +10,37 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-    <body>
-        <div class="wrap">
-            <header>
-                <div class="navbar navbar-inverse navbar-fixed-top">
-                    <div class="navbar-inner">
-                        <div class="container-fluid">
-                            <a class="logo pull-left" href="/">
-                                <img src="~/Content/img/BCAlogo-DNA.gif" height="38" width="52" title="BCA Research" />
-                            </a>
-                            <div id="topNavigation"></div>
-                            <ul class="nav navbar-nav">
-                                <li>@Html.ActionLink("CRUD", "Index", "Home")</li>
-                                <li>@Html.ActionLink("BOWA", "Bowa", "Home")</li>
-                                <li>@Html.ActionLink("TreeGrid", "Demo1", "TreeGridDemo")</li>
-                            </ul>
-                            @*@Html.Partial("_LoginPartial")*@
-                        </div>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="logo pull-left" href="/">
+                            <img src="~/Content/img/BCAlogo-DNA.gif" height="38" width="52" title="BCA Research" />
+                        </a>
+                        <div id="topNavigation"></div>
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("CRUD", "Index", "Home")</li>
+                            <li>@Html.ActionLink("BOWA", "Bowa", "Home")</li>
+                            <li>@Html.ActionLink("TreeGrid", "Demo1", "TreeGridDemo")</li>
+                        </ul>
+                        @*@Html.Partial("_LoginPartial")*@
                     </div>
                 </div>
-            </header>
-            <div class="body @ViewBag.BrowserVersion">
-                @RenderBody()
-                <hr />
-                <footer>
-                    <p>&copy; @DateTime.Now.Year - BCA Research</p>
-                </footer>
-           </div>
-        </div>   
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
-    </body>
+            </div>
+        </header>
+        <div class="body @ViewBag.BrowserVersion">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - BCA Research</p>
+            </footer>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+    @RenderSection("scripts", required: false)
+</body>
 </html>
