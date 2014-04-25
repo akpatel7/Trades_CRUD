@@ -16,11 +16,11 @@ portfoliosApp.config(['$routeProvider',
       $routeProvider.
            when('/portfolio/landing', {
                templateUrl: 'Templates/partials/portfolio-landing.html',
-               //controller: 'portfoliosController'
+               controller: 'portfoliosController'
            }).
           when('/portfolio/detail', {
               templateUrl: 'Templates/partials/portfolio-detail.html',
-              //controller: 'portfoliosController'
+              controller: 'portfoliosController'
           }).
         otherwise({
             redirectTo: '/portfolio/landing'

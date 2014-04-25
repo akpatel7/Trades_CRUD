@@ -527,9 +527,9 @@
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\app\controllers\allocationsGridUsageController.js" />
+    <Content Include="Scripts\app\controllers\portfoliosController.js" />
     <Content Include="Scripts\app\directives\emPortfoliosGrid.js" />
     <Content Include="Scripts\app\portfoliosApp.js" />
-    <Content Include="Scripts\app\controllers\portfoliosController.js" />
     <Content Include="Scripts\app\controllers\allocationsController.js" />
     <Content Include="Scripts\app\controllers\tradesGridUsageController.js" />
     <Content Include="Scripts\app\directives\emAllocationsGrid.js" />

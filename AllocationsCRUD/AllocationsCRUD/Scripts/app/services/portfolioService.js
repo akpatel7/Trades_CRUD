@@ -61,6 +61,31 @@ portfoliosApp.factory('portfolioService', function ($resource, $q) {
             return deferred.promise;
         },
 
+        
+        getAllServices: function () {
+            var deferred = $q.defer();
+            resource.get({ entity: 'Services' },
+                function (data) {
+                    deferred.resolve(data);
+                },
+                function (response) {
+                    deferred.reject(response);
+                });
+            return deferred.promise;
+        },
+
+        getAllPortfolios: function (odataParam) {
+            var deferred = $q.defer();
+            resource.get({ entity: 'Portfolios' },
+                function (data) {
+                    deferred.resolve(data);
+                },
+                function (response) {
+                    deferred.reject(response);
+                });
+            return deferred.promise;
+        },
+
         getPortfolios: function (portfolioId, odataParam) {
             var deferred = $q.defer();
             resource.get({ entity: 'Portfolios(' + portfolioId + ')', odataParam: odataParam },
